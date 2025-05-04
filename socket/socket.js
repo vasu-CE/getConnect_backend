@@ -92,9 +92,9 @@ userChatIo.use(async (socket , next) => {
 
 const onlineUsers = new Set();
 userChatIo.on('connection' , socket => {
-    // console.log("A user is connected to user chat" , socket.user._id.toString());
+    // console.log("A user is connected to user chat" , socket.user?._id.toString());
 
-    socket.userId = socket.user._id.toString();
+    socket.userId = socket?.user?._id.toString();
 
     socket.join(socket.userId);
 

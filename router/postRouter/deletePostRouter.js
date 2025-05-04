@@ -27,7 +27,6 @@ router.get('/delete/:id' , isAuthenticate , async (req,res) => {
         let user = await userModel.findById(userId);
         user.posts = user.posts.filter(id => id.toString() != postId);
         await user.save();
-        await redisClient.del('posts');
         // res.redirect('/post/allpost');
         return res.status(200).json({
             message : "Post deleted successfully",
