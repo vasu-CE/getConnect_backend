@@ -102,10 +102,8 @@ const signup = async ( req,res ) => {
         // Set cookie with proper options
         res.cookie("token", token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Use secure in production
-            sameSite: "lax",
-            path: "/",
-            maxAge: 24 * 60 * 60 * 1000 // 24 hours
+            secure:true, // Use secure in production
+            sameSite: 'none'
         });
         return res.status(201).json({
             user: newUser,
@@ -153,10 +151,8 @@ const login = async (req, res) => {
         // Set cookie with proper options
         res.cookie("token", token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Use secure in production
-            sameSite: "lax",
-            path: "/",
-            maxAge: 24 * 60 * 60 * 1000 // 24 hours
+            secure: true,
+            sameSite: 'none'
         });
 
         return res.status(200).json({
