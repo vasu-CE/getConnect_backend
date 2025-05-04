@@ -1,0 +1,48 @@
+*{
+    /* text-transform: uppercase; */
+    font-family: sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+.main{
+    width:100vw;
+    display: flex; 
+}
+
+.main-left{
+    width:15vw;
+    height: 15vw;
+    margin-left: 7.5vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    border:1px solid black;
+}
+
+.left-div{
+    width: 100%;
+    height:5vw;
+    border:1px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+.profile-corporate-info{
+    margin-top: 80px;
+}
+.profile{
+    height: 400px;
+}
+.inte li{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.connection{
+    font-weight: 600;
+    font-size: large;
+    margin-bottom: 10px;
+}

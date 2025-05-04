@@ -1,0 +1,190 @@
+*{
+    background-color: rgb(252, 252, 252);
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    background-color: #fff;
+}
+
+.profile-corporate-info{
+    width:100vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.info{
+    width:15vw;
+    height: 5vw;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    
+    border-radius: 15px;
+}
+
+.area{
+    width:15vw;
+    height:5vw;
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+#area-btn{
+    width:13vw;
+    height:5vw;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.5s;
+    z-index: 1;
+    overflow: hidden;
+    
+}
+
+#area-btn::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width:0%;
+    background: #00abf0;
+    /* border-radius: 15px; */
+    z-index: -1;
+    transition: 0.5s;
+}
+
+#area-btn:hover::before{
+    width:100%;
+}
+
+#area-btn:hover{
+    color:#081b29
+}
+
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:40vw;
+    height: auto;
+    margin-top: 10px;
+    border:1px solid black;
+    justify-content: center;
+    flex-wrap: wrap;
+    border:1px solid black;
+}
+
+.profile .image{
+    width:20vw;
+    height:20vw;
+    border-radius: 10vw;
+    margin-top: 20px;
+    /* border: 1px solid black; */
+}
+.profile .image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10vw;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.in{
+    font-size:25px;
+    text-align: center;
+}
+.info2{
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+.info2 button,input{
+    padding:5px 10px;
+}
+
+.info3{
+    display: flex;
+    flex-direction: column;
+    margin-top:7vh;
+}
+.info3 .create button{
+    padding:10px 20px;
+}
+button:hover{
+    cursor: pointer;
+}
+
+.interest{
+    font-size:20px;
+}
+.corporate{
+    
+    width:15vw;
+    height:30vw;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.in-corporate{
+    width:15vw;
+    font-size: large;
+    display: flex;
+    height: 5vw;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.main-activity{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.main-activity{
+    width:40vw;
+    margin-left: 7.5vw;
+    border:1px solid black;
+    display: flex;
+    justify-content:space-evenly;
+    gap:15px;
+    flex-wrap: wrap;
+}
+
+.main-activity .post{
+    width: 250px;
+    height: 250px;
+    margin : 15px 5px;
+    /* margin-bottom: 10px; */
+    border:1px solid black;
+    & img{
+        width: 100%;
+        height: 100%;
+        
+    }
+}
+
+.main .left-div{
+    width:230px;
+    margin-left:120px;
+    margin-right:9px;
+    cursor: pointer;
+}

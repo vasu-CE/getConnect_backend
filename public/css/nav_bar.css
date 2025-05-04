@@ -1,0 +1,135 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Header Styles */
+header {
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #aca9a9;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar is above other elements */
+  font-size: 16px;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Search Bar */
+.searchContainer {
+  position: relative;
+  width: 300px;
+}
+
+#search {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+#search:focus {
+  border-color: #0A66C2;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Search List Dropdown */
+#list {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#list li {
+  padding: 8px;
+  border-bottom: 1px solid #e6e6e6;
+  cursor: pointer;
+}
+
+#list li:hover {
+  background-color: #f0f0f0;
+}
+
+#list li:last-child {
+  border-bottom: none;
+}
+
+/* Navbar Links */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.nav-icons a {
+  margin: 0 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.nav-icons a:hover {
+  color: #0A66C2;
+}
+
+.nav-icons i {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+/* Profile Link Special Styling */
+.profile-link {
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .searchContainer {
+    width: 200px;
+  }
+
+  .nav-icons a {
+    font-size: 14px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
