@@ -28,7 +28,9 @@ const getAllProjectByUserId = async ({userId}) => {
     if(!userId){
         throw new Error('User ID is required');
     };
-    const allUserProject = await projectModel.find({users : userId})
+    const allUserProject = await projectModel
+                            .find({users : userId})
+                            .populate('users')
 
     return allUserProject;
 }

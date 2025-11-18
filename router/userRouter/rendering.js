@@ -2,6 +2,8 @@ const express  = require('express');
 const router = express.Router();
 const User = require('../../model/userModel');
 const isAuthenticate = require('../../middleware/isAuthenticate');
+const axios = require('axios');
+
 
 const availableTechInterests = [
     '5G Technology', 'Agile', 'Azure' , 'Agile Development', 'Android Development', 'API Development', 'API Testing', 'Artificial Intelligence', 'Augmented Reality', 
@@ -26,24 +28,34 @@ router.get('/profile' , (req,res) => {
     res.render('register');
 })
 
-router.get('/resume/:id' ,async (req,res) => {
-    try{
-        const authorId = req.params.id;
-        const user =await User.findById(authorId);
-        
-        const resumeImg = user.resume;
-        // console.log(resumeImg);
-
-        return res.status(200).json({
-            success : true,
-            resumeImg
-        })
-    }catch(err){
-        return res.status(401).json({
-            success : false
-        })
+router.get('/resume/:id', async (req, res) => {
+    try {
+      const authorId = req.params.id;
+      const user = await User.findById(authorId);
+  
+      const resumeUrl = user.resume;
+  
+      // Make a request to fetch the PDF from Cloudinary
+      const response = await axios({
+        method: 'get',
+        url: resumeUrl,
+        responseType: 'stream', // important to stream binary content
+      });
+  
+      // Set content headers
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'inline; filename="resume.pdf"');
+  
+      // Pipe the PDF stream to the response
+      response.data.pipe(res);
+    } catch (err) {
+      console.error(err);
+      return res.status(401).json({
+        success: false,
+        message: 'Could not retrieve resume',
+      });
     }
-})
+  });
 
 //     const userId = req.params.userId;
 //     const user = await User.findById(userId);

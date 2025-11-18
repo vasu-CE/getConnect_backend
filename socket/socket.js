@@ -1,5 +1,6 @@
 const http = require('http');
 const {Server} = require('socket.io');
+require('dotenv').config();
 
 const express = require('express');
 const app = express();
@@ -11,6 +12,12 @@ const {generateResult} = require('../services/ai.service');
 const messageModel = require('../model/messageModel');
 
 const server = http.createServer(app);
+
+// Set the port for the server
+const port = process.env.PORT || 3002;
+server.listen(port, () => {
+    console.log(`Socket server running on port ${port}`);
+});
 
 const io = new Server(server, {
     cors: {

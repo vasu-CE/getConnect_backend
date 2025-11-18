@@ -72,6 +72,7 @@ const getProjectById = async (req,res) => {
         const project = await projectService.getProjectById({projectId});
 
         return res.status(200).json({
+            success : true,
             project,
         })
     }catch(err){
